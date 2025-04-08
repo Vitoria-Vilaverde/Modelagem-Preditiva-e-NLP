@@ -1,0 +1,23 @@
+/projeto-ds-avancado/  
+│── /data/  
+│   ├── /raw/                  # Dados brutos (CSV, JSON, banco de dados)  
+│   ├── /processed/            # Dados tratados e enriquecidos  
+│   └── /features/             # Features extraídas para modelagem  
+│  
+│── /notebooks/  
+│   ├── 01_eda.ipynb           # Análise exploratória  
+│   ├── 02_feature_engineering.ipynb  # Criação de variáveis preditivas  
+│   ├── 03_modeling_classification.ipynb  # Modelos de classificação  
+│   ├── 04_clustering.ipynb    # Clusterização  
+│   ├── 05_nlp_analysis.ipynb  # NLP com BERT/GPT  
+│   └── 06_monitoring.ipynb    # Análise de drift em produção  
+│  
+│── /src/  
+│   ├── /data_processing/      # Scripts de ETL  
+│   ├── /models/               # Treinamento e validação  
+│   ├── /nlp/                  # Processamento de linguagem natural  
+│   └── /monitoring/           # Monitoramento de modelos  
+│  
+│── /api/                      # FastAPI para deploy  
+│── /docs/                     # Documentação técnica e relatórios  
+│── README.md                  # Visão geral  
