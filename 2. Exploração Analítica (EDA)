@@ -1,0 +1,15 @@
+# notebooks/01_eda.ipynb  
+import pandas as pd  
+import seaborn as sns  
+
+df = pd.read_csv("data/raw/dataset.csv")  
+
+# Análise de missing values  
+print(df.isnull().sum())  
+
+# Distribuição de variáveis numéricas  
+sns.histplot(df['target'], kde=True)  
+
+# Correlações  
+corr_matrix = df.corr()  
+sns.heatmap(corr_matrix, annot=True)  
