@@ -1,0 +1,6 @@
+# notebooks/05_nlp_analysis.ipynb  
+from transformers import pipeline  
+
+classifier = pipeline("text-classification", model="neuralmind/bert-base-portuguese-cased")  
+result = classifier("Este produto é excelente!")  
+print(result)  
