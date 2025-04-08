@@ -1,0 +1,8 @@
+# src/monitoring/drift_detection.py  
+from evidently import ColumnMapping  
+from evidently.report import Report  
+from evidently.metrics import DatasetDriftMetric  
+
+report = Report(metrics=[DatasetDriftMetric()])  
+report.run(reference_data=df_train, current_data=df_prod)  
+report.save_html("drift_report.html")  
