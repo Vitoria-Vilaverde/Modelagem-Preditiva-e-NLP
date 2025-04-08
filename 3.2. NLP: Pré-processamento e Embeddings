@@ -1,0 +1,13 @@
+# src/nlp/text_processing.py  
+from transformers import BertTokenizer, BertModel  
+import torch  
+
+tokenizer = BertTokenizer.from_pretrained('neuralmind/bert-base-portuguese-cased')  
+model = BertModel.from_pretrained('neuralmind/bert-base-portuguese-cased')  
+
+def get_bert_embedding(text):  
+    inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=512)  
+    outputs = model(**inputs)  
+    return outputs.last_hidden_state.mean(dim=1).detach().numpy()  
+
+df['embedding'] = df['texto'].apply(get_bert_embedding)  
