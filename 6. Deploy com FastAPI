@@ -1,0 +1,11 @@
+# api/main.py  
+from fastapi import FastAPI  
+import joblib  
+
+app = FastAPI()  
+model = joblib.load("models/random_forest.pkl")  
+
+@app.post("/predict")  
+def predict(data: dict):  
+    prediction = model.predict([data['features']])  
+    return {"prediction": prediction[0]}  
